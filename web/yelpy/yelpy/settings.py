@@ -26,6 +26,14 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
+PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__)),
+STATIC_ROOT = os.path.join(os.path.dirname(__file__),'static')
+STATICFILES_DIRS = (
+    os.path.join(os.path.dirname(__file__),'templates').replace('\\','/'),
+)
+TEMPLATE_DIRS = (
+    os.path.join(os.path.dirname(__file__),'templates').replace('\\','/'),
+)
 
 # Application definition
 
@@ -36,6 +44,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'haystack',
+    'search',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -80,3 +90,17 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+
+HAYSTACK_CONNECTIONS = {
+
+    'default': {
+        'ENGINE': 'haystack.backends.solr_backend.SolrEngine',
+        'URL': 'http://127.0.0.1:8983/solr'
+        # ...or for multicore...
+        # 'URL': 'http://127.0.0.1:8983/solr/mysite',
+    },
+    #'default': {
+    #    'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
+    #    'PATH': os.path.join(os.path.dirname(__file__), 'whoosh_index'),
+    #},
+}

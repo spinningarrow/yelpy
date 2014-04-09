@@ -1,6 +1,8 @@
 from django.conf.urls import patterns, include, url
 
 from django.contrib import admin
+from search import views
+
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -9,4 +11,8 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^home/', views.home),
+    url(r'^search/', include('haystack.urls')),
+
+
 )
