@@ -1,0 +1,64 @@
+<html>
+<body>
+
+<div id="informer">
+	<h1>You aren't authorised to view this page.</h1>
+	<h2>Please login first</h2>
+</div>
+
+<div id ="myform">
+<form action="/polls/form/"  method="POST">{% csrf_token %}
+{{ form.as_p }}
+<input type="submit" value="Enter" />
+</form>
+</div>
+
+<div id="fb-root"></div>
+<script>
+  document.getElementById("informer").style.display="none";
+  document.getElementById("myform").style.display="none";
+  window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '218688974992726',
+    status     : true, 
+    cookie     : true, 
+    xfbml      : true  
+  });
+
+  FB.Event.subscribe('auth.authResponseChange', function(response) {
+    // Here we specify what we do with the response anytime this event occurs. 
+    if (response.status === 'connected') {
+      //loggedIn();
+      document.getElementById("myform").style.display="block";
+      
+    } else if (response.status === 'not_authorized') {
+      //FB.login();
+      window.location.replace("/polls/");
+    } else {
+      //FB.login();
+      window.location.replace("/polls/");
+    }
+  });
+  };
+
+  // Load the SDK asynchronously
+  (function(d){
+   var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+   if (d.getElementById(id)) {return;}
+   js = d.createElement('script'); js.id = id; js.async = true;
+   js.src = "//connect.facebook.net/en_US/all.js";
+   ref.parentNode.insertBefore(js, ref);
+  }(document));
+
+
+</script>
+
+
+<fb:login-button show-faces="true" width="200" max-rows="1" data-auto-logout-link="true"></fb:login-button>
+
+
+
+
+
+</body>
+</html>
