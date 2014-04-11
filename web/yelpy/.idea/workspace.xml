@@ -7,9 +7,9 @@
     <file path="/settings.py" changelist="968e948d-ce45-4f45-8b69-216244563b77" time="1397038110243" ignored="false" />
     <file path="/urls.py" changelist="968e948d-ce45-4f45-8b69-216244563b77" time="1397039997290" ignored="false" />
     <file path="/views.py" changelist="968e948d-ce45-4f45-8b69-216244563b77" time="1396954047029" ignored="false" />
-    <file path="/indexing.py" changelist="968e948d-ce45-4f45-8b69-216244563b77" time="1397020524411" ignored="false" />
-    <file path="/models.py" changelist="968e948d-ce45-4f45-8b69-216244563b77" time="1397030228146" ignored="false" />
-    <file path="/search_indexes.py" changelist="968e948d-ce45-4f45-8b69-216244563b77" time="1397036116814" ignored="false" />
+    <file path="/indexing.py" changelist="968e948d-ce45-4f45-8b69-216244563b77" time="1397113334373" ignored="false" />
+    <file path="/models.py" changelist="968e948d-ce45-4f45-8b69-216244563b77" time="1397146224566" ignored="false" />
+    <file path="/search_indexes.py" changelist="968e948d-ce45-4f45-8b69-216244563b77" time="1397153830017" ignored="false" />
     <file path="/search.html" changelist="968e948d-ce45-4f45-8b69-216244563b77" time="1397038849081" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,91 +29,73 @@
     <favorites_list name="yelpy" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.60138106">
-      <split-first>
-        <leaf>
-          <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/yelpy/settings.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="78" column="0" selection-start="2118" selection-end="2118" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/yelpy/urls.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="13" column="11" selection-start="331" selection-end="331" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/search/views.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="7" column="0" selection-start="171" selection-end="171" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="search_indexes.py" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/search/search_indexes.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="21" column="69" selection-start="1207" selection-end="1207" vertical-scroll-proportion="0.0">
-                  <folding>
-                    <element signature="e#21#49#0" expanded="true" />
-                    <marker date="1397036239791" expanded="true" signature="226:1808" placeholder="..." />
-                    <marker date="1397036239791" expanded="true" signature="1690:1719" placeholder="..." />
-                    <marker date="1397036239791" expanded="true" signature="1762:1808" placeholder="..." />
-                    <marker date="1397036239791" expanded="true" signature="3330:3358" placeholder="..." />
-                    <marker date="1397036239791" expanded="true" signature="5071:5100" placeholder="..." />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="search.html" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/yelpy/templates/search/search.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="21" column="28" selection-start="434" selection-end="434" vertical-scroll-proportion="-13.125">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="indexing.py" pinned="false" current="true" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/indexing.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="44" column="0" selection-start="2308" selection-end="2308" vertical-scroll-proportion="0.7802198">
-                  <folding>
-                    <element signature="e#0#27#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/search/models.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="30" column="50" selection-start="1610" selection-end="1610" vertical-scroll-proportion="-0.74418604">
-                  <folding>
-                    <marker date="1397030320627" expanded="true" signature="1645:3164" placeholder="..." />
-                    <marker date="1397030320627" expanded="true" signature="3200:4795" placeholder="..." />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf>
+      <file leaf-file-name="settings.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/yelpy/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="78" column="0" selection-start="2118" selection-end="2118" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/yelpy/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="11" selection-start="331" selection-end="331" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/search/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="0" selection-start="171" selection-end="171" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="search_indexes.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/search/search_indexes.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="116" column="0" selection-start="6815" selection-end="6815" vertical-scroll-proportion="0.7316637">
+              <folding>
+                <element signature="e#21#49#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/search/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="112" column="4" selection-start="6041" selection-end="6058" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="search.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/yelpy/templates/search/search.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="28" selection-start="434" selection-end="434" vertical-scroll-proportion="-6.25">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="indexing.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/indexing.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="34" column="86" selection-start="1933" selection-end="1933" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -124,19 +106,19 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/search/views.py" />
-        <option value="$PROJECT_DIR$/search/models.py" />
-        <option value="$PROJECT_DIR$/search/search_indexes.py" />
         <option value="$PROJECT_DIR$/templates/search/search.html" />
         <option value="$PROJECT_DIR$/yelpy/settings.py" />
-        <option value="$PROJECT_DIR$/indexing.py" />
         <option value="$PROJECT_DIR$/yelpy/templates/search/search.html" />
         <option value="$PROJECT_DIR$/yelpy/urls.py" />
+        <option value="$PROJECT_DIR$/indexing.py" />
+        <option value="$PROJECT_DIR$/search/models.py" />
+        <option value="$PROJECT_DIR$/search/search_indexes.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="46" />
-    <option name="width" value="1874" />
+    <option name="x" value="752" />
+    <option name="width" value="1168" />
     <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -195,6 +177,58 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="yelpy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yelpy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yelpy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yelpy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="search" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yelpy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yelpy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yelpy" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="search" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="indexes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="search" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -451,8 +485,8 @@
     </list>
     <recent_temporary>
       <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Python.manage" />
-        <item index="1" class="java.lang.String" itemvalue="Python.indexing" />
+        <item index="0" class="java.lang.String" itemvalue="Python.indexing" />
+        <item index="1" class="java.lang.String" itemvalue="Python.manage" />
       </list>
     </recent_temporary>
   </component>
@@ -483,18 +517,18 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="46" y="0" width="1874" height="1040" extended-state="1" />
-    <editor active="true" />
+    <frame x="752" y="0" width="1168" height="1040" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13189845" sideWeight="0.66401815" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.13453537" sideWeight="0.66401815" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33598185" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33598185" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -583,9 +617,7 @@
     <entry file="file://$PROJECT_DIR$/indexing.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="23" selection-start="1561" selection-end="1561" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#0#27#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -617,54 +649,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/search/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/search/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="50" selection-start="1610" selection-end="1610" vertical-scroll-proportion="-0.74418604">
-          <folding>
-            <marker date="1397030320627" expanded="true" signature="1645:3164" placeholder="..." />
-            <marker date="1397030320627" expanded="true" signature="3200:4795" placeholder="..." />
-          </folding>
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/search/search.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="36" selection-start="413" selection-end="413" vertical-scroll-proportion="0.16666667">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/search/search_indexes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="69" selection-start="1207" selection-end="1207" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#21#49#0" expanded="true" />
-            <marker date="1397036239791" expanded="true" signature="226:1808" placeholder="..." />
-            <marker date="1397036239791" expanded="true" signature="1690:1719" placeholder="..." />
-            <marker date="1397036239791" expanded="true" signature="1762:1808" placeholder="..." />
-            <marker date="1397036239791" expanded="true" signature="3330:3358" placeholder="..." />
-            <marker date="1397036239791" expanded="true" signature="5071:5100" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/search/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="171" selection-end="171" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/yelpy/templates/search/search.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="28" selection-start="434" selection-end="434" vertical-scroll-proportion="-13.125">
-          <folding />
-        </state>
+        <state line="20" column="36" selection-start="413" selection-end="413" vertical-scroll-proportion="0.16666667" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/yelpy/settings.py">
@@ -681,11 +671,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/search/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="0" selection-start="171" selection-end="171" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/indexing.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="0" selection-start="2308" selection-end="2308" vertical-scroll-proportion="0.7802198">
+        <state line="34" column="86" selection-start="1933" selection-end="1933" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yelpy/templates/search/search.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="28" selection-start="434" selection-end="434" vertical-scroll-proportion="-6.25">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/search/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="112" column="4" selection-start="6041" selection-end="6058" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/search/search_indexes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="116" column="0" selection-start="6815" selection-end="6815" vertical-scroll-proportion="0.7316637">
           <folding>
-            <element signature="e#0#27#0" expanded="true" />
+            <element signature="e#21#49#0" expanded="true" />
           </folding>
         </state>
       </provider>
