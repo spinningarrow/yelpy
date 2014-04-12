@@ -1,0 +1,4 @@
+select distinct categories,name,location from shopslistings;
+select distinct categories,name,location from listings;
+select distinct categories,name,location from artslistings;
+select distinct categories,name,location from sportslistings;
