@@ -74,8 +74,7 @@ ignoreCase="true" expand="false"/>
                 />
         <filter class="solr.LowerCaseFilterFactory"/>
         <filter class="solr.EnglishPossessiveFilterFactory"/>
-        <filter class="solr.KeywordMarkerFilterFactory" protected="protwords.txt
-"/>
+        <filter class="solr.KeywordMarkerFilterFactory" protected="protwords.txt"/>
         <!-- Optionally you may want to use this less aggressive stemmer instead
  of PorterStemFilterFactory:
           <filter class="solr.EnglishMinimalStemFilterFactory"/>
@@ -200,6 +199,7 @@ ignoreCase="true" expand="false"/>
     <field name="menu_provider" type="text_en" indexed="true" stored="true" multiValued="false" />
 
     <field name="menu_date_updated" type="text_en" indexed="true" stored="true" multiValued="false" />
+	<field name="gift_certificates" type="text_en" indexed="true" stored="true" multiValued="false" />
 
   </fields>
 
