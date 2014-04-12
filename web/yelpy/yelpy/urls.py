@@ -6,13 +6,13 @@ from search import views
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'yelpy.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
 
-    url(r'^admin/', include(admin.site.urls)),
-    url(r'^home/', views.home),
-    url(r'^search/', include('haystack.urls')),
+
+	url(r'^$', 'yelpy.views.index', name='home'),
+	url(r'^yelpy/profile/', 'yelpy.views.profile', name='profile'),
+	url(r'^yelpy/search2/', 'yelpy.views.search2', name='search2'),
+	url(r'^admin/', include(admin.site.urls)),
+	url(r'^search/', include('haystack.urls')),
 
 
 )

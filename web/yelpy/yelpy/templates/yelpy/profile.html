@@ -1,0 +1,53 @@
+<html>
+<head>
+	<h1> Profile </h1>
+</head>
+<body>
+	<p id="hola">Hey there </p>
+		  <div id="fb-root"></div>
+		  <script>
+		    window.fbAsyncInit = function() {
+		      FB.init({
+		        appId      : '218688974992726',
+		        status     : true, 
+		        cookie     : true, 
+		        xfbml      : true  
+		      });
+
+		      FB.Event.subscribe('auth.authResponseChange', function(response) {
+		    // Here we specify what we do with the response anytime this event occurs. 
+		    if (response.status === 'connected') {
+		      loggedIn();
+		      //testAPI();
+		    } else if (response.status === 'not_authorized') {
+		      window.location.replace("/yelpy/index.html");
+		    } else {
+		      window.location.replace("/yelpy/index.html");
+		  	  }
+		 	 });
+		    };
+
+		  // Load the SDK asynchronously
+		  (function(d){
+		   var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+		   if (d.getElementById(id)) {return;}
+		   js = d.createElement('script'); js.id = id; js.async = true;
+		   js.src = "//connect.facebook.net/en_US/all.js";
+		   ref.parentNode.insertBefore(js, ref);
+		 }(document));
+
+		
+		  function loggedIn() {
+		    console.log('inside loggedIn()');
+		    FB.api('/me', function(response) {
+
+		    document.getElementById("hola").innerHTML += response.name + "!";
+		  });  
+		  };
+
+
+		</script>
+</body>
+
+  <fb:login-button  size="small" show-faces="true" width="200" max-rows="1" data-auto-logout-link="true"></fb:login-button>
+</html>
