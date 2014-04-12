@@ -14,14 +14,14 @@ neighborhoods = ['Ang Mo Kio','Arab Street','Bedok North', 'Bishan', 'Boat Quay'
 row = 0
 print len(neighborhoods)
 #resultsDict = []
-with dictlitestore.DictLiteStore('arts.db', 'shopslistings') as bucket:
+with dictlitestore.DictLiteStore('sports.db', 'sportslistings') as bucket:
     #results = yelp_api.search_query(location='singapore', category_filter='shopping')
     #print results['businesses'][0]
     #print len(results['businesses'])
     #bucket.store(results['businesses'][0])
 
     for location in neighborhoods:
-        search_results = yelp_api.search_query(location=location, category_filter='arts', cc='SG')
+        search_results = yelp_api.search_query(location=location, category_filter='active', cc='SG')
         #print type(search_results)
         #print json.dumps(search_results['businesses'])
         print location
@@ -32,7 +32,7 @@ with dictlitestore.DictLiteStore('arts.db', 'shopslistings') as bucket:
             offsetValue = (str)(x*20)
             #print("Query", x)
 
-            results = yelp_api.search_query(location=location, category_filter='arts', offset=offsetValue, cc='SG')
+            results = yelp_api.search_query(location=location, category_filter='active', offset=offsetValue, cc='SG')
             row=0
             for r in results:
                 results['businesses'][row]['identifier'] = results['businesses'][row]['id']

@@ -16,7 +16,7 @@
  limitations under the License.
 -->
 
-<schema name="default" version="1.4">
+<schema name="default" version="1.5">
   <types>
     <fieldtype name="string"  class="solr.StrField" sortMissingLast="true" omitNorms="true"/>
     <fieldType name="boolean" class="solr.BoolField" sortMissingLast="true" omitNorms="true"/>
@@ -69,13 +69,12 @@ ignoreCase="true" expand="false"/>
         <tokenizer class="solr.StandardTokenizerFactory"/>
         <filter class="solr.StopFilterFactory"
                 ignoreCase="true"
-                words="stopwords_en.txt"
+                words="stopwords.txt"
                 enablePositionIncrements="true"
                 />
         <filter class="solr.LowerCaseFilterFactory"/>
         <filter class="solr.EnglishPossessiveFilterFactory"/>
-        <filter class="solr.KeywordMarkerFilterFactory" protected="protwords.txt
-"/>
+        <filter class="solr.KeywordMarkerFilterFactory" protected="protwords.txt"/>
         <!-- Optionally you may want to use this less aggressive stemmer instead
  of PorterStemFilterFactory:
           <filter class="solr.EnglishMinimalStemFilterFactory"/>
@@ -87,7 +86,7 @@ ignoreCase="true" expand="false"/>
         <filter class="solr.SynonymFilterFactory" synonyms="synonyms.txt" ignoreCase="true" expand="true"/>
         <filter class="solr.StopFilterFactory"
                 ignoreCase="true"
-                words="stopwords_en.txt"
+                words="stopwords.txt"
                 enablePositionIncrements="true"
                 />
         <filter class="solr.LowerCaseFilterFactory"/>
@@ -140,6 +139,7 @@ ignoreCase="true" expand="false"/>
 
   <fields>
     <!-- general -->
+	<field name="_version_" type="long" indexed="true" stored="true"/>
     <field name="id" type="string" indexed="true" stored="true" multiValued="false" required="true"/>
     <field name="django_ct" type="string" indexed="true" stored="true" multiValued="false"/>
     <field name="django_id" type="string" indexed="true" stored="true" multiValued="false"/>
@@ -174,7 +174,7 @@ ignoreCase="true" expand="false"/>
 
     <field name="display_phone" type="text_en" indexed="true" stored="true" multiValued="false" />
 
-    <field name="snippet_image_url" type="text_en" indexed="true" stored="true"multiValued="false" />
+    <field name="snippet_image_url" type="text_en" indexed="true" stored="true" multiValued="false" />
 
     <field name="rating_image_url_small" type="text_en" indexed="true" stored="true" multiValued="false" />
 
@@ -198,7 +198,8 @@ ignoreCase="true" expand="false"/>
 
     <field name="menu_provider" type="text_en" indexed="true" stored="true" multiValued="false" />
 
-    <field name="menu_date_updated" type="text_en" indexed="true" stored="true"multiValued="false" />
+    <field name="menu_date_updated" type="text_en" indexed="true" stored="true" multiValued="false" />
+	<field name="gift_certificates" type="text_en" indexed="true" stored="true" multiValued="false" />
 
   </fields>
 

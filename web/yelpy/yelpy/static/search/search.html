@@ -19,15 +19,32 @@
 
         {% if query %}
             <h3>Results</h3>
-
+            <table border="1">
+                <th>is claimed</th>
+                <th>rating</th>
+                <th>reviews</th>
+                <th>name</th>
+                <th>url</th>
+                <th>phone</th>
+                <th>snippet</th>
+                <th>categories</th>
+                <th>location</th>
             {% for result in page.object_list %}
-                <p>
-                    <a href="{{ result.object.get_absolute_url }}">{{ result.object.title }}</a>
-                </p>
+                <tr>
+                    <td>{{ result.is_claimed }}</td>
+                    <td>{{ result.rating }}</td>
+                    <td>{{ result.review_count }}</td>
+                    <td>{{ result.name }}</td>
+                    <td>{{ result.url }}</td>
+                    <td>{{ result.phone }}</td>
+                    <td>{{ result.snippet_text }}</td>
+                    <td>{{ result.categories }}</td>
+                    <td>{{ result.location }}</td>
+                </tr>
             {% empty %}
-                <p>No results found.</p>
+                <tr>NO RESULTSJOINWERVWOIFHW*)$H$</tr>
             {% endfor %}
-
+            </table>
             {% if page.has_previous or page.has_next %}
                 <div>
                     {% if page.has_previous %}<a href="?q={{ query }}&amp;page={{ page.previous_page_number }}">{% endif %}&laquo; Previous{% if page.has_previous %}</a>{% endif %}
@@ -37,6 +54,7 @@
             {% endif %}
         {% else %}
             {# Show some example queries to run, maybe query syntax, something else? #}
+            <h1>NO RESULTS</h1>
         {% endif %}
     </form>
 </body>
