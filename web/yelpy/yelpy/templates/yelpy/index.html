@@ -1,78 +1,67 @@
-<html>
-<head>
-  <h1> yelp-Y-yelp ~<i>beta</i></h1> 
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Yelpy — Personalised Yelp listings</title>
 
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
 
-  <!-- Latest compiled and minified JavaScript -->
-  
-</head>
-<body>
-  
-  <div id="fb-root"></div>
-  <script>
-    window.fbAsyncInit = function() {
-      FB.init({
-        appId      : '218688974992726',
-        status     : true, 
-        cookie     : true, 
-        xfbml      : true  
-      });
+    <!-- Latest compiled and minified JavaScript -->
+  </head>
+  <body>
+    <div class="container">
+      <h1>Yelpy</h1>
+      <fb:login-button  size="xlarge" show-faces="true" width="200" max-rows="1" data-auto-logout-link="true"></fb:login-button>
+    </div>
 
-      FB.Event.subscribe('auth.authResponseChange', function(response) {
-    // Here we specify what we do with the response anytime this event occurs. 
-    if (response.status === 'connected') {
-      loggedIn();
-      //testAPI();
-    } else if (response.status === 'not_authorized') {
-      FB.login();
-      //window.location.replace("/polls/index/");
-    } else {
-      FB.login();
-      //window.location.replace("/polls/index/");
-    }
-  });
-    };
+    <!-- Scripts -->
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '218688974992726',
+          status     : true,
+          cookie     : true,
+          xfbml      : true
+        });
 
-  // Load the SDK asynchronously
-  (function(d){
-   var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
-   if (d.getElementById(id)) {return;}
-   js = d.createElement('script'); js.id = id; js.async = true;
-   js.src = "//connect.facebook.net/en_US/all.js";
-   ref.parentNode.insertBefore(js, ref);
- }(document));
+        FB.Event.subscribe('auth.authResponseChange', function(response) {
+          // Here we specify what we do with the response anytime this event occurs.
+          if (response.status === 'connected') {
+            loggedIn();
+            //testAPI();
+          } else if (response.status === 'not_authorized') {
+            FB.login();
+            //window.location.replace("/polls/index/");
+          } else {
+            FB.login();
+            //window.location.replace("/polls/index/");
+          }
+        });
+      };
 
+      // Load the SDK asynchronously
+      (function(d){
+        var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement('script'); js.id = id; js.async = true;
+        js.src = "//connect.facebook.net/en_US/all.js";
+        ref.parentNode.insertBefore(js, ref);
+      }(document));
 
+      function testAPI() {
+        console.log('Welcome!  Fetching your information.... ');
+        FB.api('/me', function(response) {
+          console.log('Good to see you, ' + response.email + '.');
+          console.log(response);
+        });
+      }
 
-  function testAPI() {
-    console.log('Welcome!  Fetching your information.... ');
-    FB.api('/me', function(response) {
-    console.log('Good to see you, ' + response.email + '.');
-    console.log(response);
-  });
-    
-  }
-  function loggedIn() {
-    console.log('inside loggedIn()');
-    window.location.replace("/yelpy/profile.html");
-  };
-
-
-</script>
-
-<!--
-  Below we include the Login Button social plugin. This button uses the JavaScript SDK to
-  present a graphical Login button that triggers the FB.login() function when clicked. -->
-
-  <fb:login-button  size="xlarge" show-faces="true" width="200" max-rows="1" data-auto-logout-link="true"></fb:login-button>
-
-  <div>
-    <p>
-      At yelp-Y-yelp, we strive to personalise your Yelp (TM) experience. Please login through Facebook (TM) to enjoy these wild benefits. 
-    </p>
-  </div>
-</body>
+      function loggedIn() {
+        console.log('inside loggedIn()');
+        // window.location.replace("/yelpy/profile.html");
+      }
+    </script>
+  </body>
 </html>
-
