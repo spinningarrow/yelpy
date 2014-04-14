@@ -2,7 +2,7 @@
 
 <h4>Food</h4>
 {% for r in results.food %}
-    <pre>{{ r.object.name }}</pre>
+    <pre><a href={% autoescape off %}{{ r.object.url }}{% endautoescape %}>{{ r.object.name }}</a></pre>
     <pre>{{ r.object.location }}</pre>
 {% endfor %}
 <hr>
