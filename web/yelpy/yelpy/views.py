@@ -22,14 +22,14 @@ def index(request):
 @csrf_exempt
 def profile(request):
     if request.method == 'POST':
-        form = FoodForm(request.POST)
+        form = AllForm(request.POST)
         if form.is_valid():
             
-            chinese = form.cleaned_data['chinese']
-            indian = form.cleaned_data['indian']
-            vietnamese = form.cleaned_data['vietnamese']
-            thai = form.cleaned_data['thai']
-            western = form.cleaned_data['western']
+            # chinese = form.cleaned_data['chinese']
+            # indian = form.cleaned_data['indian']
+            # vietnamese = form.cleaned_data['vietnamese']
+            # thai = form.cleaned_data['thai']
+            # western = form.cleaned_data['western']
             form.save()
 
             # return render(request, 'yelpy/profile.html', {
@@ -38,7 +38,7 @@ def profile(request):
             # return HttpResponse(json.dumps(form.data), content_type="application/json")
             
     else:        
-        form = FoodForm()
+        form = AllForm()
 
     return render(request, 'yelpy/profile.html', {
         'form': form,
@@ -48,7 +48,7 @@ def search2(request):
     return render(request,'yelpy/search2.html')
 def form(request):
     if request.method == 'POST':
-        form = FoodForm(request.POST)
+        form = AllForm(request.POST)
         if form.is_valid():
             chinese = form.cleaned_data['chinese']
             indian = form.cleaned_data['indian']
@@ -60,7 +60,7 @@ def form(request):
             })
 
     else:
-        form = FoodForm()
+        form = AllForm()
 
     return render(request, 'yelpy/profile.html', {
         'form': form,
