@@ -4,36 +4,25 @@ from yelpy.forms import *
 from django.views.decorators.csrf import csrf_exempt
 from yelpy.models import User
 from django.core import serializers
+from django.forms.models import model_to_dict
 import json
 import logging
 
 logger = logging.getLogger(__name__)
-globvar = 123
+
 def index(request):
-    return render(request, 'yelpy/index.html')
-
-# @csrf_exempt
-# def get_user_id(request):
-#     if request.method == 'POST':
-#         global globvar
-#         globvar = request.POST.get('id', '')
-
+    return render(request, 'yelpy/index.html', {
+        'fb_id': request.session.get('fb_user_id', '')
+    })
 
 @csrf_exempt
 def profile(request):
     if request.method == 'POST':
         form = AllForm(data=request.POST)
-        # print form.errors
         if form.is_valid():
             form.save()
 
         else:
-
-            # chinese = form.cleaned_data['chinese']
-            # indian = form.cleaned_data['indian']
-            # vietnamese = form.cleaned_data['vietnamese']
-            # thai = form.cleaned_data['thai']
-            # western = form.cleaned_data['western']
             userId = request.POST.get('id', '')
             obj = All.objects.get(id=userId)
 
@@ -57,24 +46,26 @@ def profile(request):
             obj.cinema = request.POST.get('cinema', '')
             obj.theater = request.POST.get('theater', '')
 
-
             obj.save()
 
-            # return render(request, 'yelpy/profile.html', {
-            #   'chinese': chinese, 'indian':indian, 'vietnamese':vietnamese,'thai':thai,'western':western,
-            # })
-        return HttpResponse(json.dumps(form.data), content_type="application/json")
+    else: # not a POST request
+        userId = request.session.get('fb_user_id', '')
+        user_prefs_data = None
 
-    else:
-        form = AllForm()
+        if userId:
+            user_objects = All.objects.filter(id=userId)
+            if len(user_objects):
+                user_prefs_data = model_to_dict(user_objects[0])
 
+        form = AllForm(data=user_prefs_data)
 
     return render(request, 'yelpy/profile.html', {
         'form': form,
     })
-    #return render(request,'yelpy/profile.html')
+
 def search2(request):
     return render(request,'yelpy/search2.html')
+
 def form(request):
     if request.method == 'POST':
         form = AllForm(request.POST)
@@ -84,12 +75,10 @@ def form(request):
             vietnamese = form.cleaned_data['vietnamese']
             thai = form.cleaned_data['thai']
             western = form.cleaned_data['western']
+
             return render(request, 'yelpy/landing.html', {
                 'chinese': chinese, 'indian':indian, 'vietnamese':vietnamese,'thai':thai,'western':western,
             })
-
-    else:
-        form = AllForm()
 
     return render(request, 'yelpy/profile.html', {
         'form': form,
@@ -98,12 +87,16 @@ def form(request):
 
 @csrf_exempt
 def create_user(request):
+
     if request.method == 'POST':
-        global globvar
         id = request.POST.get('id', '')
-        #globvar = id
         name = request.POST.get('name', '')
         users = User.objects.filter(id=id)
+
+        session_fb_id = request.session.get('fb_user_id', '')
+
+        if session_fb_id != id:
+            request.session['fb_user_id'] = id
 
         if len(users) == 0: # User doesn't exist, create one
             user_object = User(id = id, name = name)

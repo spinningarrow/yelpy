@@ -108,3 +108,5 @@ HAYSTACK_CONNECTIONS = {
     #    'PATH': os.path.join(os.path.dirname(__file__), 'whoosh_index'),
     #},
 }
+
+SESSION_ENGINE = "django.contrib.sessions.backends.signed_cookies"
