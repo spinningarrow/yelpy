@@ -67,6 +67,13 @@
       $(document).ready(function () {
         fbUserInfoDeferred.done(function (response) {
           $('.fb-username').html(response.first_name + ' ' + response.last_name);
+
+          $.post('/yelpy/users', {
+            'id': response.id,
+            'name': response.first_name + ' ' + response.last_name
+          }).done(function () {
+            console.log('data posted');
+          });
         })
       })
     </script>
