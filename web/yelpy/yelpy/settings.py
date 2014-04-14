@@ -47,6 +47,7 @@ INSTALLED_APPS = (
     'haystack',
     'search',
     'bootstrap3',
+    'yelpy',
 )
 
 MIDDLEWARE_CLASSES = (

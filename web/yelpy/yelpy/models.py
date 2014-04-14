@@ -11,3 +11,10 @@ class Food(models.Model):
 	# On Python 3: def __str__(self):
 	def __unicode__(self):
 		return self.chinese
+
+class User(models.Model):
+	id = models.AutoField(primary_key = True)
+	name = models.CharField(max_length = 255)
+
+	def __unicode__(self):
+		return self.name
