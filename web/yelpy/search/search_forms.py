@@ -14,7 +14,9 @@ class ListingSearchForm(SearchForm):
 
         print self.cleaned_data['loc']
         #print sqs
+		#you can list your filters here. Below is a filter on the location attribute
         sqs = sqs.filter(location__contains=self.cleaned_data['loc'])
         #print sqs
-
+		
+		#this returns 1 instance of search query.
         return sqs

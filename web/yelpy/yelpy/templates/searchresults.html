@@ -1,3 +1,11 @@
+<table>
+
+
 {% for r in results %}
-    {{ r.object.name }}
+    <tr>
+        <td>{{ r.object.name }}</td>
+        <td>{{ r.object.location }}</td>
+    </tr>
 {% endfor %}
+
+</table>

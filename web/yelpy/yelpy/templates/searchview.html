@@ -1,5 +1,7 @@
-<h1>SEARCH STUFF</h1>
-<form action="/searchview/" method='get'>
+<h1>Search Stuffs</h1>
+<form action="/searchthings/" method='get'>
     {% csrf_token %}
-    <input type="text"/>
+    <input type="text" name="q" placeholder="query"/>
+    <input type="text" name="loc" placeholder="location"/>
+    <button type="submit">Submit</button>
 </form>

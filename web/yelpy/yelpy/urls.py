@@ -13,7 +13,7 @@ urlpatterns = patterns('',
 	url(r'^yelpy/search2/', 'yelpy.views.search2', name='search2'),
 	url(r'^admin/', include(admin.site.urls)),
 	url(r'^search/', include('haystack.urls')),
-	url(r'^search/', views.searchview),
+	url(r'^searchstuff/', views.searchview),
     url(r'^searchthings/', views.searchthings),
 
 
