@@ -13,7 +13,7 @@ class Food(models.Model):
 		return self.chinese
 
 class User(models.Model):
-	id = models.AutoField(primary_key = True)
+	id = models.CharField(primary_key =True, max_length = 235)
 	name = models.CharField(max_length = 255)
 
 	def __unicode__(self):

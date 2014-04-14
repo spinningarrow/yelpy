@@ -13,7 +13,7 @@ def profile(request):
 			vietnamese = form.cleaned_data['vietnamese']
 			thai = form.cleaned_data['thai']
 			western = form.cleaned_data['western']
-			form.save(using='combined')
+			form.save(commit=True)
 			return render(request, 'yelpy/landing.html', {
 				'chinese': chinese, 'indian':indian, 'vietnamese':vietnamese,'thai':thai,'western':western,
 			})
