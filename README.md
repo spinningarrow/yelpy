@@ -1,10 +1,8 @@
 information-retrieval
 =====================
-3 Main categories have been indexed from yelp: food, shopping and arts. 
+4 Main categories have been indexed from yelp: food, shopping, sports and arts. 
 
-There are 12k crawled entries spanning these 3 categories. 
-There might be duplicates due to certain businesses falling into many categories. 
-e.g. Starbucks is located in 'shopping' and 'food', hence twice.
+There are 12k crawled entries spanning these categories. 
 
 Based on the retrieved json, the following fields have been indexed:
 
@@ -28,7 +26,3 @@ Based on the retrieved json, the following fields have been indexed:
 {{ object.location }}
 {{ object.deals }}
 
-To test it out:
-1) in console, type "java -jar start.jar" where solr's "start.jar" is located
-2) go to localhost:8000/search/
-3) search
