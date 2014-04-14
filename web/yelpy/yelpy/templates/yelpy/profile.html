@@ -1,82 +1,145 @@
 {% load bootstrap3 %}
 {% include 'yelpy/_header.html' %}
-  
+{% bootstrap_messages %}
   <form method="POST">
-  {% csrf_token %}
-  {% bootstrap_form form %}
-  <input type="submit" value="Submit" />
+    <!-- {% bootstrap_form form %} -->
+    {% csrf_token %}
+    {{ form.id }}
+    <div class="row">
+      {{ form.non_field_errors }}
+      <div class="col-md-3">
+        <h3>Food</h3>
+        <div class="checkbox">
+          <label>
+            {{ form.chinese }} {{ form.chinese.errors }}
+            {{ form.chinese.label}}
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            {{ form.indian }}
+            {{ form.indian.label}}
+          </label>
+        </div>
+          <div class="checkbox">
+          <label>
+            {{ form.vietnamese }}
+            {{ form.vietnamese.label}}
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            {{ form.thai }}
+            {{ form.thai.label}}
+          </label>
+        </div>
+         <div class="checkbox">
+          <label>
+            {{ form.western }}
+            {{ form.western.label}}
+          </label>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <h3>Sports</h3>
+        <div class="checkbox">
+          <label>
+            {{ form.fitness }}
+            {{ form.fitness.label}}
+          </label>
+        </div>
+          <div class="checkbox">
+          <label>
+            {{ form.golf }}
+            {{ form.golf.label}}
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            {{ form.football }}
+            {{ form.football.label}}
+          </label>
+        </div>
+            <div class="checkbox">
+          <label>
+            {{ form.swimming }}
+            {{ form.swimming.label}}
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            {{ form.fishing }}
+            {{ form.fishing.label}}
+          </label>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <h3>Shopping</h3>
+        <div class="checkbox">
+          <label>
+            {{ form.clothes }}
+            {{ form.clothes.label}}
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            {{ form.accessories }}
+            {{ form.accessories.label}}
+          </label>
+        </div>
+         <div class="checkbox">
+          <label>
+            {{ form.women }}
+            {{ form.women.label}}
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            {{ form.children }}
+            {{ form.children.label}}
+          </label>
+        </div>
+          <div class="checkbox">
+          <label>
+            {{ form.men }}
+            {{ form.men.label}}
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            {{ form.gifts }}
+            {{ form.gifts.label}}
+          </label>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <h3>Arts</h3>
+        <div class="checkbox">
+          <label>
+            {{ form.gallery }}
+            {{ form.gallery.label}}
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            {{ form.cinema }}
+            {{ form.cinema.label}}
+          </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            {{ form.theater }}
+            {{ form.theater.label}}
+          </label>
+        </div>
+      </div>
+    </div>
+    
+    <div class="form-group">
+        <input type="submit" value="Submit" class="btn btn-primary">
+    </div>
   </form>
-  
-
-	<!-- <form role="form">
-		<div class="form-group">
-      <label for="exampleInputEmail1">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-    </div>
-
-    <div class="form-group">
-      <label>Food cuisine preferences</label>
-      <div class="checkbox">
-        <label>
-          <input type="checkbox" value=""> Chinese
-        </label>
-      </div>
-
-      <div class="checkbox">
-        <label>
-          <input type="checkbox" value=""> Western
-        </label>
-      </div>
-
-      <div class="checkbox">
-        <label>
-          <input type="checkbox" value=""> Mexican
-        </label>
-      </div>
-      
-      <div class="checkbox">
-        <label>
-          <input type="checkbox" value=""> Thai
-        </label>
-      </div>
-      
-      <div class="checkbox">
-        <label>
-          <input type="checkbox" value=""> Indian
-        </label>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label>Shopping preferences</label>
-      <div class="checkbox">
-        <label>
-          <input type="checkbox" value=""> Clothes
-        </label>
-      </div>
-
-      <div class="checkbox">
-        <label>
-          <input type="checkbox" value=""> Books
-        </label>
-      </div>
-
-      <div class="checkbox">
-        <label>
-          <input type="checkbox" value=""> Music
-        </label>
-      </div>
-
-      <div class="checkbox">
-        <label>
-          <input type="checkbox" value=""> Art
-        </label>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <button type="submit" class="btn btn-primary">Submit</button>
-      <button type="reset" class="btn btn-danger">Reset</button>
-    </div>
-	</form> -->
 {% include 'yelpy/_footer.html' %}

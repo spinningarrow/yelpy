@@ -4,7 +4,10 @@ from django.forms import ModelForm
 import json
 
 class All(models.Model):
-    fb_id = models.CharField(primary_key=True, max_length=235)
+    # class Meta:
+    #     select_on_save = True
+
+    id = models.CharField(primary_key=True, max_length=235)
     #---food categories---
     chinese = models.BooleanField()
     indian = models.BooleanField()
@@ -35,7 +38,7 @@ class All(models.Model):
 
 
     def __unicode__(self):
-        return self.chinese
+        return "sdss"
 
 class User(models.Model):
     id = models.CharField(primary_key =True, max_length = 235)
