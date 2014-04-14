@@ -1,19 +1,30 @@
-{% for r in foodResults %}
-    {{ r.object.name }}
-    {{ r.object.location }}
+{% include 'yelpy/_header.html' %}
+
+<h4>Food</h4>
+{% for r in results.food %}
+    <pre>{{ r.object.name }}</pre>
+    <pre>{{ r.object.location }}</pre>
 {% endfor %}
 <hr>
-{% for r in artsResults %}
-    {{ r.object.name }}
-    {{ r.object.location }}
+
+<h4>Arts</h4>
+{% for r in results.arts %}
+    <pre>{{ r.object.name }}</pre>
+    <pre>{{ r.object.location }}</pre>
 {% endfor %}
 <hr>
-{% for r in sportsResults %}
-    {{ r.object.name }}
-    {{ r.object.location }}
+
+<h4>Sports</h4>
+{% for r in results.sports %}
+    <pre>{{ r.object.name }}</pre>
+    <pre>{{ r.object.location }}</pre>
 {% endfor %}
 <hr>
-{% for r in shoppingResults %}
-    {{ r.object.name }}
-    {{ r.object.location }}
+
+<h4>Shopping</h4>
+{% for r in results.shops %}
+    <pre>{{ r.object.name }}</pre>
+    <pre>{{ r.object.location }}</pre>
 {% endfor %}
+
+{% include 'yelpy/_footer.html' %}

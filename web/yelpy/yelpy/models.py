@@ -34,11 +34,38 @@ class All(models.Model):
     gallery = models.BooleanField()
     cinema = models.BooleanField()
     theater = models.BooleanField()
-    
+
 
 
     def __unicode__(self):
         return "sdss"
+
+    @staticmethod
+    def category_dict():
+        return {
+            'chinese': 'food',
+            'indian': 'food',
+            'vietnamese': 'food',
+            'thai': 'food',
+            'western': 'food',
+
+            'fitness': 'sports',
+            'golf': 'sports',
+            'football': 'sports',
+            'swimming': 'sports',
+            'fishing': 'sports',
+
+            'clothes': 'shops',
+            'accessories': 'shops',
+            'women': 'shops',
+            'children': 'shops',
+            'men': 'shops',
+            'gifts': 'shops',
+
+            'gallery': 'arts',
+            'cinema': 'arts',
+            'theater': 'arts',
+        }
 
 class User(models.Model):
     id = models.CharField(primary_key =True, max_length = 235)

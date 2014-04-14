@@ -1,11 +1,10 @@
+{% include 'yelpy/_header.html' %}
 <table>
-
-
 {% for r in results %}
     <tr>
-        <td>{{ r.object.name }}</td>
-        <td>{{ r.object.location }}</td>
+        <td><pre>{{ r.object.name }}</pre></td>
+        <td><pre>{{ r.object.location }}</pre></td>
     </tr>
 {% endfor %}
-
 </table>
+{% include 'yelpy/_footer.html' %}

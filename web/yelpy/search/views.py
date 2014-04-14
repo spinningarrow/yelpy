@@ -1,5 +1,7 @@
 from django.shortcuts import render
-from  django.http import HttpResponse
+from django.http import HttpResponse
+from django.forms.models import model_to_dict
+from yelpy.models import All
 from search_forms import ListingSearchForm
 from models import *
 import pysolr
@@ -21,6 +23,28 @@ from haystack.query import SearchQuerySet
 
 def automaticQuerying(request):
     #results = SearchQuerySet().all()
+    userId = request.GET.get('user_id', '')
+
+    results = {
+        'food': SearchQuerySet().models(shopslistings), # shops is food (wtf, why?!)
+        'shops': SearchQuerySet().models(foodslistings),
+        'sports': SearchQuerySet().models(sportslistings),
+        'arts': SearchQuerySet().models(artslistings),
+    }
+
+    # Get current user's preferences
+    if (userId):
+
+        # Do some lookup magic and store the result in the appropriate category
+        user_prefs = model_to_dict(All.objects.get(id=userId))
+        prefs_list = [pref for pref in user_prefs if user_prefs[pref] == True]
+
+        prefs_category_map = All.category_dict()
+
+        for item in prefs_list:
+            category = prefs_category_map[item]
+            results[category] = results[category].filter_or(content=item)
+
     #userFoodPreference = some function that gets the stored food preference
     #userArtsPreference = some function that gets the stored arts preference
     #userSportsPreference = some function that gets the stored arts preference
@@ -41,4 +65,4 @@ def automaticQuerying(request):
     artsResults = SearchQuerySet().filter(content='dance')
     sportsResults = SearchQuerySet().filter(content='soccer')
     shoppingResults = SearchQuerySet().filter(content='ion')
-    return render(request, 'automaticquerying.html', {'foodResults':foodResults, 'artsResults':artsResults, 'sportsResults':sportsResults, 'shoppingResults':shoppingResults})
+    return render(request, 'automaticquerying.html', { 'results': results })
