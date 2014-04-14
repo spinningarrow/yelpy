@@ -1,10 +1,10 @@
 from django.forms import ModelForm
-from yelpy.models import *
+from yelpy.models import Food
 
 
-class foodForm(ModelForm):
+class FoodForm(ModelForm):
 	class Meta:
-		model = food
+		model = Food
 		fields = ['chinese', 'indian','vietnamese','thai','western']
 	def process(self):
 		cd = self.cleaned_data

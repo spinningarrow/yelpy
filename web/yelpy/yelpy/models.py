@@ -1,8 +1,8 @@
 from django.db import models
 from django.forms import ModelForm
 
-class food(models.Model):
-	chinese = models.CharField(max_length=200)	
+class Food(models.Model):
+	chinese = models.BooleanField()
 	indian = models.BooleanField()	
 	vietnamese = models.BooleanField()	
 	thai = models.BooleanField()	

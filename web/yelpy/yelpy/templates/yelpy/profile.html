@@ -1,10 +1,11 @@
+{% load bootstrap3 %}
 {% include 'yelpy/_header.html' %}
-  <div id ="myform">
-  <form action="/yelpy/profile/"  method="POST">{% csrf_token %}
-  {{ form.as_p }}
+  
+  <form>
+  {% bootstrap_form form %}
   <input type="submit" value="Submit" />
   </form>
-  </div>
+  
 
 	<!-- <form role="form">
 		<div class="form-group">
