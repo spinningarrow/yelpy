@@ -23,7 +23,7 @@ from haystack.query import SearchQuerySet
 
 def automaticQuerying(request):
     #results = SearchQuerySet().all()
-    userId = request.GET.get('user_id', '')
+    userId = request.session.get('fb_user_id', '')
 
     results = {
         'food': SearchQuerySet().models(shopslistings), # shops is food (wtf, why?!)
