@@ -46,6 +46,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'haystack',
     'search',
+    'bootstrap3',
 )
 
 MIDDLEWARE_CLASSES = (
