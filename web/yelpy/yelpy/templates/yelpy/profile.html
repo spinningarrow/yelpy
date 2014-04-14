@@ -1,3 +1,67 @@
 {% include 'yelpy/_header.html' %}
-	<p id="hola">Hey there </p>
+	<form role="form">
+		<div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+    </div>
+
+    <div class="form-group">
+      <label>Food cuisine preferences</label>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" value=""> Chinese
+        </label>
+      </div>
+
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" value=""> Western
+        </label>
+      </div>
+
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" value=""> Mexican
+        </label>
+      </div>
+
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" value=""> Indian
+        </label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Shopping preferences</label>
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" value=""> Clothes
+        </label>
+      </div>
+
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" value=""> Books
+        </label>
+      </div>
+
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" value=""> Music
+        </label>
+      </div>
+
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" value=""> Art
+        </label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="reset" class="btn btn-danger">Reset</button>
+    </div>
+	</form>
 {% include 'yelpy/_footer.html' %}
