@@ -2,7 +2,7 @@ information-retrieval
 =====================
 4 Main categories have been indexed from yelp: food, shopping, sports and arts. 
 
-There are 12k crawled entries spanning these categories. 
+There are 15k crawled entries spanning these categories. 
 
 Based on the retrieved json, the following fields have been indexed:
 
