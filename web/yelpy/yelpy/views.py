@@ -88,7 +88,6 @@ def form(request):
 
 @csrf_exempt
 def create_user(request):
-
     if request.method == 'POST':
         id = request.POST.get('id', '')
         name = request.POST.get('name', '')
@@ -102,10 +101,17 @@ def create_user(request):
         if len(users) == 0: # User doesn't exist, create one
             user_object = User(id = id, name = name)
             user_object.save()
-            users = User.objects.filter(id=id)
-            return HttpResponse(json.dumps(users[0].as_dict()), content_type="application/json")
+            # users = User.objects.filter(id=id)
+            return HttpResponse(json.dumps("Created user and logged in."), content_type="application/json")
 
-        return HttpResponse(json.dumps(users[0].as_dict()), content_type="application/json")
+        return HttpResponse(json.dumps("Logged in."), content_type="application/json")
 
-    users = User.objects.all()
-    return HttpResponse(json.dumps(users[0].as_dict()), content_type="application/json")
+    # users = User.objects.all()
+    return HttpResponse(json.dumps("Who should I log in?"), content_type="application/json")
+
+def logout(request):
+    fb_user_id = request.session.get('fb_user_id', '')
+    if fb_user_id:
+        request.session.flush()
+
+    return HttpResponse(json.dumps("Logged out, if there was anyone logged in."), content_type="application/json")

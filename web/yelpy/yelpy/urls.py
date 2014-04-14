@@ -17,4 +17,5 @@ urlpatterns = patterns('',
     url(r'^searchthings/', views.searchthings),
 	url(r'^automaticquery/', views.automaticQuerying),
     url(r'^yelpy/users$', 'yelpy.views.create_user'),
+    url(r'^yelpy/logout$', 'yelpy.views.logout'),
 )

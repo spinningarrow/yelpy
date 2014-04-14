@@ -20,11 +20,28 @@
           xfbml      : true
         });
 
+        FB.Event.subscribe('auth.login', function() {
+          fbUserInfoDeferred = $.Deferred();
+
+          FB.api('/me', function (response) {
+            fbUserInfoDeferred.resolve(response);
+          });
+
+          displayFbUsername(true);
+        });
+
+        FB.Event.subscribe('auth.logout', function(response) {
+          fbUserInfoDeferred = $.Deferred();
+          fbUserInfoDeferred.reject(response);
+
+          displayFbUsername();
+        });
+
         FB.Event.subscribe('auth.authResponseChange', function(response) {
-          // Here we specify what we do with the response anytime this event occurs.
+
+          fbUserInfoDeferred = $.Deferred();
+
           if (response.status === 'connected') {
-            loggedIn();
-            //testAPI();
 
             FB.api('/me', function (response) {
               fbUserInfoDeferred.resolve(response);
@@ -32,11 +49,12 @@
 
           } else if (response.status === 'not_authorized') {
             FB.login();
-            //window.location.replace("/polls/index/");
+            fbUserInfoDeferred.reject();
           } else {
-            FB.login();
-            //window.location.replace("/polls/index/");
+            fbUserInfoDeferred.reject();
           }
+
+          displayFbUsername();
         });
       };
 
@@ -49,22 +67,10 @@
         ref.parentNode.insertBefore(js, ref);
       }(document));
 
-      function testAPI() {
-        console.log('Welcome!  Fetching your information.... ');
-        FB.api('/me', function(response) {
-          console.log('Good to see you, ' + response.email + '.');
-          console.log(response);
-        });
-      }
-
-      function loggedIn() {
-        console.log('inside loggedIn()');
-        // window.location.replace("/yelpy/profile.html");
-      }
     </script>
 
     <script>
-      $(document).ready(function () {
+      function displayFbUsername(reload) {
         fbUserInfoDeferred.done(function (response) {
           $('.fb-username').html(response.first_name + ' ' + response.last_name);
 
@@ -73,17 +79,31 @@
             'name': response.first_name + ' ' + response.last_name
           }).done(function () {
             console.log('data posted');
+            if (reload) {
+              location.reload();
+            }
           });
 
-          // $.post('/yelpy/id', {
-          //   'id': response.id,
-          // }).done(function () {
-          //   //console.log(response.id);
-          //   console.log('data 2 posted');
-          // });
           $('#id_fb_id').val(response.id);
           $('#id_id').val(response.id);
-        })
+        });
+
+        fbUserInfoDeferred.fail(function () {
+          $('.fb-username').html('');
+          $('#id_fb_id').val('');
+          $('#id_id').val('');
+
+          $.get('/yelpy/logout').done(function () {
+            console.log('Logged out');
+            location.reload();
+          })
+        });
+
+        return fbUserInfoDeferred.promise();
+      }
+
+      $(document).ready(function () {
+        displayFbUsername();
       })
     </script>
   </body>
