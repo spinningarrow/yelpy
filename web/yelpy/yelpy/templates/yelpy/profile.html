@@ -1,5 +1,12 @@
 {% include 'yelpy/_header.html' %}
-	<form role="form">
+  <div id ="myform">
+  <form action="/yelpy/profile/"  method="POST">{% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="Submit" />
+  </form>
+  </div>
+
+	<!-- <form role="form">
 		<div class="form-group">
       <label for="exampleInputEmail1">Email address</label>
       <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
@@ -24,7 +31,13 @@
           <input type="checkbox" value=""> Mexican
         </label>
       </div>
-
+      
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" value=""> Thai
+        </label>
+      </div>
+      
       <div class="checkbox">
         <label>
           <input type="checkbox" value=""> Indian
@@ -63,5 +76,5 @@
       <button type="submit" class="btn btn-primary">Submit</button>
       <button type="reset" class="btn btn-danger">Reset</button>
     </div>
-	</form>
+	</form> -->
 {% include 'yelpy/_footer.html' %}

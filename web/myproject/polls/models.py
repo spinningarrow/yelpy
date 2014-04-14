@@ -34,4 +34,4 @@ class Author(models.Model):
 	
 	# On Python 3: def __str__(self):
 	def __unicode__(self):
-		return self.name
+		return self.name	
