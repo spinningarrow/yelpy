@@ -1,14 +1,14 @@
 {% include 'yelpy/_header.html' %}
       <div class="jumbotron">
-        <h1>Yelpy</h1>
-        <p class="lead">Personalised Yelp search</p>
+        <h1>Yelpy!</h1>
+        <p class="lead">Your Personalised Yelp&trade; Search!</p>
       </div>
       <form>
         {% csrf_token %}
       </form>
-      <p>
+      <p style='text-align:center'>
         {% if fb_id %}
-          Update your search preferences in your <a href="/yelpy/profile">Profile</a>, and then go to the <a href="/automaticquery">Search</a> page to view results.
+           Update your search preferences in your <a href="/yelpy/profile">Profile</a>, and then go to the <a href="/automaticquery">Search</a> page to view results! The name Yelpy! originated to signify 'your' element of the application, through the extra 'y'. 
         {% else %}
           Please log in.
         {% endif %}

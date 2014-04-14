@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404
+from django.contrib import messages
 from django.http import *
 from yelpy.forms import *
 from django.views.decorators.csrf import csrf_exempt
@@ -45,7 +46,7 @@ def profile(request):
             obj.gallery = request.POST.get('gallery', '')
             obj.cinema = request.POST.get('cinema', '')
             obj.theater = request.POST.get('theater', '')
-
+            messages.info(request, "Success! Check your personalised results at the <a href=\"http://localhost:8000/automaticquery/\">Search</a> page.")
             obj.save()
 
     else: # not a POST request
