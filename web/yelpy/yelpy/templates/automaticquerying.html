@@ -1,7 +1,19 @@
 {% load yelpy_extras %}
 {% include 'yelpy/_header.html' %}
 
-<h2 >Food</h2>
+<h1>Search</h1>
+<p>View and filter your preferences below</p>
+
+<form method="post"> {% csrf_token %}
+  <div class="input-group">
+    <input type="text" id="query_filter" name="query_filter" class="form-control" placeholder="Filter Preferences (by name, location...)" value="{{ query_filter }}">
+    <span class="input-group-btn">
+      <button class="btn btn-success" type="submit">Filter!</button>
+    </span>
+  </div>
+</form>
+
+<h3 >Food</h3>
 <dl class="dl-horizontal">
 {% for r in results.food %}
     <dt><a href={% autoescape off %}{{ r.object.url }}{% endautoescape %}>{{ r.object.name|unquote }}</a></dt>
@@ -10,7 +22,7 @@
 </dl>
 <hr>
 
-<h2>Arts</h2>
+<h3>Arts</h3>
 <dl class="dl-horizontal">
 {% for r in results.arts %}
     <dt><a href={% autoescape off %}{{ r.object.url }}{% endautoescape %}>{{ r.object.name|unquote }}</a></dt>
@@ -19,7 +31,7 @@
 </dl>
 <hr>
 
-<h2>Sports</h2>
+<h3>Sports</h3>
 <dl class="dl-horizontal">
 {% for r in results.sports %}
     <dt><a href={% autoescape off %}{{ r.object.url }}{% endautoescape %}>{{ r.object.name|unquote }}</a></dt>
@@ -28,7 +40,7 @@
 </dl>
 <hr>
 
-<h2>Shopping</h2>
+<h3>Shopping</h3>
 <dl class="dl-horizontal">
 {% for r in results.shops %}
     <dt><a href={% autoescape off %}{{ r.object.url }}{% endautoescape %}>{{ r.object.name|unquote }}</a></dt>

@@ -23,16 +23,17 @@ from haystack.query import SearchQuerySet
 
 def automaticQuerying(request):
     #results = SearchQuerySet().all()
-    userId = request.session.get('fb_user_id', '')
+    query = ''
 
     results = {
         'food': SearchQuerySet().models(shopslistings), # shops is food (wtf, why?!)
         'shops': SearchQuerySet().models(foodslistings),
         'sports': SearchQuerySet().models(sportslistings),
         'arts': SearchQuerySet().models(artslistings),
-    }
+    }    
 
     # Get current user's preferences
+    userId = request.session.get('fb_user_id', '')
     if (userId):
 
         # Do some lookup magic and store the result in the appropriate category
@@ -44,6 +45,11 @@ def automaticQuerying(request):
         for item in prefs_list:
             category = prefs_category_map[item]
             results[category] = results[category].filter_or(content=item)
+
+    if request.method == 'POST':
+        query = request.POST.get('query_filter', '')
+        for key in results:
+            results[key] = results[key].filter(content=query)
 
     #userFoodPreference = some function that gets the stored food preference
     #userArtsPreference = some function that gets the stored arts preference
@@ -61,8 +67,8 @@ def automaticQuerying(request):
     #boosting is very sensitive! don't overuse.
     #you can do negative boosting to decrease it's score. for example, if the user doesn't like 'strawberry', do a boost of 0.9 to decrease it's relevance.
     #you can retrieve results count by using .count()
-    foodResults = SearchQuerySet().auto_query('ice cream').boost('chocolate', 1.1)
-    artsResults = SearchQuerySet().filter(content='dance')
-    sportsResults = SearchQuerySet().filter(content='soccer')
-    shoppingResults = SearchQuerySet().filter(content='ion')
-    return render(request, 'automaticquerying.html', { 'results': results })
+    # foodResults = SearchQuerySet().auto_query('ice cream').boost('chocolate', 1.1)
+    # artsResults = SearchQuerySet().filter(content='dance')
+    # sportsResults = SearchQuerySet().filter(content='soccer')
+    # shoppingResults = SearchQuerySet().filter(content='ion')
+    return render(request, 'automaticquerying.html', { 'results': results, 'query_filter': query })

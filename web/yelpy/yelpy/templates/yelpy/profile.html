@@ -2,7 +2,7 @@
 {% include 'yelpy/_header.html' %}
 {% bootstrap_messages %}
   <h1>Profile</h1>
-  <p>Choose your preferences for the categories listed below to get your personalised results.</p>
+  <p>Choose your preferences for the categories listed below to get your personalised results</p>
   <form method="POST">
     {% csrf_token %}
     {{ form.id }}
