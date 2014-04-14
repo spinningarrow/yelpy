@@ -1,7 +1,8 @@
 {% load bootstrap3 %}
 {% include 'yelpy/_header.html' %}
   
-  <form>
+  <form method="POST">
+  {% csrf_token %}
   {% bootstrap_form form %}
   <input type="submit" value="Submit" />
   </form>

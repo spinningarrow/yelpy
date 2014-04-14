@@ -1,8 +1,11 @@
 from django.db import models
+from django import forms
 from django.forms import ModelForm
 import json
 
 class Food(models.Model):
+    # id = models.CharField(primary_key =True, max_length = 235)
+    fb_id = models.CharField(primary_key=True, max_length=235)
     chinese = models.BooleanField()
     indian = models.BooleanField()
     vietnamese = models.BooleanField()
