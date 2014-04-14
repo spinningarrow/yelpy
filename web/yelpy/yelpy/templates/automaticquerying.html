@@ -1,10 +1,11 @@
+{% load yelpy_extras %}
 {% include 'yelpy/_header.html' %}
 
 <h2 >Food</h2>
 <dl class="dl-horizontal">
 {% for r in results.food %}
-    <dt><a href={% autoescape off %}{{ r.object.url }}{% endautoescape %}>{{ r.object.name}}</a></dt>
-    <dd>{{ r.object.location }}</dd>
+    <dt><a href={% autoescape off %}{{ r.object.url }}{% endautoescape %}>{{ r.object.name|unquote }}</a></dt>
+    <dd>{{ r.object.location|address }}</dd>
 {% endfor %}
 </dl>
 <hr>
@@ -12,8 +13,8 @@
 <h2>Arts</h2>
 <dl class="dl-horizontal">
 {% for r in results.arts %}
-    <dt><a href={% autoescape off %}{{ r.object.url }}{% endautoescape %}>{{ r.object.name}}</a></dt>
-    <dd>{{ r.object.identifier }}</dd>
+    <dt><a href={% autoescape off %}{{ r.object.url }}{% endautoescape %}>{{ r.object.name|unquote }}</a></dt>
+    <dd>{{ r.object.identifier|address }}</dd>
 {% endfor %}
 </dl>
 <hr>
@@ -21,8 +22,8 @@
 <h2>Sports</h2>
 <dl class="dl-horizontal">
 {% for r in results.sports %}
-    <dt><a href={% autoescape off %}{{ r.object.url }}{% endautoescape %}>{{ r.object.name}}</a></dt>
-    <dd>{{ r.object.location }}</dd>
+    <dt><a href={% autoescape off %}{{ r.object.url }}{% endautoescape %}>{{ r.object.name|unquote }}</a></dt>
+    <dd>{{ r.object.location|address }}</dd>
 {% endfor %}
 </dl>
 <hr>
@@ -30,8 +31,8 @@
 <h2>Shopping</h2>
 <dl class="dl-horizontal">
 {% for r in results.shops %}
-    <dt><a href={% autoescape off %}{{ r.object.url }}{% endautoescape %}>{{ r.object.name}}</a></dt>
-    <dd>{{ r.object.location }}</dd>
+    <dt><a href={% autoescape off %}{{ r.object.url }}{% endautoescape %}>{{ r.object.name|unquote }}</a></dt>
+    <dd>{{ r.object.location|address }}</dd>
 {% endfor %}
 </dl>
 
