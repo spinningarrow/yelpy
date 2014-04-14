@@ -1,6 +1,8 @@
 .header-fb-info {
 	line-height: 40px;
+	margin-left: 1em;
 	min-width: 150px;
+	text-align: right;
 }
 
 .fb-login-button {
