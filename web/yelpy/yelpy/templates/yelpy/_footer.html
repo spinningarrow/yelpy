@@ -4,7 +4,14 @@
     </div>
 
     <!-- Scripts -->
+
+    <!-- jQuery -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+
+    <!-- Facebook -->
     <script>
+      var fbUserInfoDeferred = $.Deferred();
+
       window.fbAsyncInit = function() {
         FB.init({
           appId      : '218688974992726',
@@ -18,6 +25,11 @@
           if (response.status === 'connected') {
             loggedIn();
             //testAPI();
+
+            FB.api('/me', function (response) {
+              fbUserInfoDeferred.resolve(response);
+            });
+
           } else if (response.status === 'not_authorized') {
             FB.login();
             //window.location.replace("/polls/index/");
@@ -49,6 +61,14 @@
         console.log('inside loggedIn()');
         // window.location.replace("/yelpy/profile.html");
       }
+    </script>
+
+    <script>
+      $(document).ready(function () {
+        fbUserInfoDeferred.done(function (response) {
+          $('.fb-username').html(response.first_name + ' ' + response.last_name);
+        })
+      })
     </script>
   </body>
 </html>
