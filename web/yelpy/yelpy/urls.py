@@ -15,5 +15,6 @@ urlpatterns = patterns('',
 	url(r'^searchstuff/', views.searchview),
 	url(r'^search/', views.searchview),
     url(r'^searchthings/', views.searchthings),
-    url(r'^yelpy/users$', 'yelpy.views.create_user')
+	url(r'^automaticquery/', views.automaticQuerying),
+    url(r'^yelpy/users$', 'yelpy.views.create_user'),
 )
