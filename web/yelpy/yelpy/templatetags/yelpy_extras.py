@@ -9,3 +9,8 @@ register = template.Library()
 def address(value):
     json_obj = json.loads(value)
     return ', '.join(json_obj['display_address'])
+
+@register.filter
+@stringfilter
+def unquote(value):
+    return value.strip('"')
