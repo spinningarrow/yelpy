@@ -11,7 +11,7 @@ Sabharwal Shahbaaz Deep Singh (U1021230J)
 YouTube Video URL
 ------------------------------------------------------------------------
 
-http://www.youtube.com/
+http://youtu.be/oveu0YvI1xA
 
 ------------------------------------------------------------------------
 Instructions on how to reproduce results and run programs
@@ -58,7 +58,6 @@ The short URL* is http://tinyurl.com/irntu-group32.
 	python manage.py rebuild_index
 
 8. Finally, run the server:
-
 	python manage.py runserver
 
 ## Using the Web UI
