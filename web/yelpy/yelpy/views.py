@@ -46,7 +46,7 @@ def profile(request):
             obj.gallery = request.POST.get('gallery', '')
             obj.cinema = request.POST.get('cinema', '')
             obj.theater = request.POST.get('theater', '')
-            messages.info(request, "Success! Check your personalised results at the <a href=\"http://localhost:8000/automaticquery/\">Search</a> page.")
+            messages.info(request, "Success! Check your personalised results at the <a href='/automaticquery/'>Search</a> page.")
             obj.save()
 
     else: # not a POST request
