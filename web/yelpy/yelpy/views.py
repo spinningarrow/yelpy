@@ -62,6 +62,7 @@ def profile(request):
 
     return render(request, 'yelpy/profile.html', {
         'form': form,
+        'fb_id': request.session.get('fb_user_id', '')
     })
 
 def search2(request):

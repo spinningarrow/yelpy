@@ -30,7 +30,7 @@ def automaticQuerying(request):
         'shops': SearchQuerySet().models(foodslistings),
         'sports': SearchQuerySet().models(sportslistings),
         'arts': SearchQuerySet().models(artslistings),
-    }    
+    }
 
     # Get current user's preferences
     userId = request.session.get('fb_user_id', '')
@@ -71,4 +71,4 @@ def automaticQuerying(request):
     # artsResults = SearchQuerySet().filter(content='dance')
     # sportsResults = SearchQuerySet().filter(content='soccer')
     # shoppingResults = SearchQuerySet().filter(content='ion')
-    return render(request, 'automaticquerying.html', { 'results': results, 'query_filter': query })
+    return render(request, 'automaticquerying.html', { 'results': results, 'query_filter': query, 'fb_id': request.session.get('fb_user_id', '') })

@@ -1,6 +1,7 @@
 {% load bootstrap3 %}
 {% include 'yelpy/_header.html' %}
 {% bootstrap_messages %}
+  {% if fb_id %}
   <h1>Profile</h1>
   <p>Choose your preferences for the categories listed below to get your personalised results</p>
   <form method="POST">
@@ -143,4 +144,7 @@
         <input type="submit" value="Submit" class="btn btn-primary">
     </div>
   </form>
+  {% else %}
+    <p>Please log in.</p>
+  {% endif %}
 {% include 'yelpy/_footer.html' %}

@@ -1,6 +1,6 @@
 {% load yelpy_extras %}
 {% include 'yelpy/_header.html' %}
-
+{% if fb_id %}
 <h1>Search</h1>
 <p>View and filter your preferences below</p>
 
@@ -47,5 +47,7 @@
     <dd>{{ r.object.location|address }}</dd>
 {% endfor %}
 </dl>
-
+{% else %}
+<p>Please log in.</p>
+{% endif %}
 {% include 'yelpy/_footer.html' %}
